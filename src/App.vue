@@ -1,17 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <first-list v-bind:products="products"></first-list>
+    
+    <second-list v-bind:products="products"></second-list>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Firstlist from './components/productListOne.vue';
+import SecondList from './components/productListTwo.vue';
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    'first-list': Firstlist,
+    'second-list': SecondList
+  },
+  data(){
+    return {
+      products: [
+        {name: 'Banana' , price: 2000}, 
+        {name: 'Rice' , price: 230}, 
+        {name: 'anana' , price: 400}, 
+        {name: 'cabbage' , price: 24300}, 
+        {name: 'milk' , price: 23000}, 
+        {name: 'matoke' , price: 2450}, 
+        {name: 'beans' , price: 2000}, 
+        {name: 'cassava' , price: 1000}, 
+        {name: 'maize' , price: 54000}, 
+
+      ]
+    }
   }
 }
 </script>
@@ -24,5 +44,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  width: 80%;
+  margin: 0 auto;
 }
 </style>
